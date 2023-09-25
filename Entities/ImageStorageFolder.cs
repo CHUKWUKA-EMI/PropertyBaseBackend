@@ -4,7 +4,8 @@ namespace PropertyBase.Entities
     public enum ImageStorageFolder
     {
         Profile,
-        Property
+        Property,
+        Documents
     }
 }
 

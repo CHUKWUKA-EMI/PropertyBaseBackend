@@ -26,6 +26,7 @@ namespace PropertyBase.Data
         public DbSet<PropertyImage> PropertyImages { get; set; }
         public DbSet<Agency> Agencies { get; set; }
         public DbSet<PropertyInspectionRequest> PropertyInspectionRequests {get; set;}
+        public DbSet<TenancyAgreement> TenancyAgreements { get; set; }
 
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         {

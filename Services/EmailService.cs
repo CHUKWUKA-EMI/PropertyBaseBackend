@@ -48,6 +48,27 @@ namespace PropertyBase.Services
             return PropertyInspectionRequestEmail.GenerateTemplate(recipientName, requestSenderName, requestSenderEmail, propertyUrl);
         }
 
+        public string GenerateHtmlForTenancyAgreementCreation(
+           string tenantName,
+           Guid documentId,
+           Guid propertyId
+           )
+        {
+            var propertyUrl = $"{Environment.GetEnvironmentVariable("FRONTEND_URL")}/property/{propertyId}";
+            var documentUrl = $"{Environment.GetEnvironmentVariable("FRONTEND_URL")}/document/{documentId}";
+            return TenancyAgreementCreationEmail.GenerateTemplate(tenantName, documentUrl, propertyUrl);
+        }
+
+        public string GenerateHtmlForTenancyAgreementAcceptance(
+          string tenantName,
+          string agencyName,
+          Guid documentId
+          )
+        {
+            var documentUrl = $"{Environment.GetEnvironmentVariable("FRONTEND_URL")}/document/{documentId}";
+            return TenancyAgreementAcceptanceEmail.GenerateTemplate(tenantName, agencyName,documentUrl);
+        }
+
         public async void sendMail(EmailRequest emailRequest)
         {
             if (!Configuration.Default.ApiKey.ContainsKey("api-key"))

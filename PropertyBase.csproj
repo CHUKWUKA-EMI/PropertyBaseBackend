@@ -84,6 +84,7 @@
     <None Remove="Features\Properties\DeleteImage\" />
     <None Remove="Features\Properties\DeleteProperty\" />
     <None Remove="Features\Properties\SendPropertyInspectionRequest\" />
+    <None Remove="DTOs\TenancyAgreement\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Entities\" />
@@ -114,5 +115,6 @@
     <Folder Include="Features\Properties\DeleteImage\" />
     <Folder Include="Features\Properties\DeleteProperty\" />
     <Folder Include="Features\Properties\SendPropertyInspectionRequest\" />
+    <Folder Include="DTOs\TenancyAgreement\" />
   </ItemGroup>
 </Project>

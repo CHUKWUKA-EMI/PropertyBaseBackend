@@ -10,6 +10,16 @@ namespace PropertyBase.Contracts
         string GenerateHtmlForEmailConfirmation(User user, string confirmationToken);
         string GenerateHtmlForPasswordReset(User user, string resetToken);
         string GenerateHtmlForPropertyInspectionEmail(string recipientName,string requestSenderName,string requestSenderEmail,Guid propertyId);
+        string GenerateHtmlForTenancyAgreementCreation(
+           string tenantName,
+           Guid documentId,
+           Guid propertyId
+           );
+        string GenerateHtmlForTenancyAgreementAcceptance(
+          string tenantName,
+          string agencyName,
+          Guid documentId
+          );
     }
 }
 

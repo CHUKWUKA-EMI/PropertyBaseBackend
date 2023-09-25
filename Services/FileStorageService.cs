@@ -41,7 +41,7 @@ namespace PropertyBase.Services
             {
                 file = base64String,
                 fileName = Guid.NewGuid().ToString(),
-                folder = folderName == ImageStorageFolder.Profile? "Profile":"Property",
+                folder = folderName == ImageStorageFolder.Profile? "Profile":folderName == ImageStorageFolder.Property ?"Property":"Documents",
             };
             
             var uploadedFile = await _imagekitClient.UploadAsync(obj);

@@ -1,16 +1,13 @@
 ﻿using System;
-using PropertyBase.Entities;
-
 namespace PropertyBase.Services.EmailTemplates
 {
-    public static class PropertyInspectionRequestEmail
+    public static class TenancyAgreementAcceptanceEmail
     {
         public static string GenerateTemplate(
-            string recipientName,
-            string requestSenderName,
-            string requestSenderEmail,
-            string propertyUrl
-            )
+             string tenantName,
+             string agencyName,
+             string documentPageUrl
+             )
         {
             return $@"
               <!DOCTYPE html>
@@ -53,21 +50,10 @@ namespace PropertyBase.Services.EmailTemplates
                   </head>
                   <body>
                     <div style=""margin-right: auto; margin-left: auto"">
-                      <p>Dear <b>{recipientName},</b></p>
+                      <p>Dear <b>{agencyName},</b></p>
 
-                      <p>We hope this email finds you well. We wanted to inform you that <em>{requestSenderName}</em>, whose email address is {requestSenderEmail},
-                          has expressed a keen interest in inspecting one of your properties.
-                      </p>
-
-                       <p>You can find more details and images of this property <a class=""link"" href=""{propertyUrl}"">here</a>
-                      </p>
-
-                      <p>
-                        Please let us know the available inspection dates and times, and we will coordinate with {requestSenderName} accordingly.
-                      </p>
-
-                      <p>
-                        Thank you for your prompt attention to this request. We look forward to facilitating a smooth property inspection process.
+                      <p>We hope this email finds you well. We wanted to inform you that <em>{tenantName}</em>,
+                          has signed this <a class=""link"" href=""{documentPageUrl}"">Tenancy Agreement Document</a>.
                       </p>
 
                       <p>Warm regards,</p>
@@ -76,7 +62,6 @@ namespace PropertyBase.Services.EmailTemplates
                         <b>Propery Forager Team</b>
                        
                       </p>
-                       <p> +2348654978 </>
                     </div>
                   </body>
                 </html>

@@ -117,6 +117,7 @@ namespace PropertyBase.Extensions
             builder.Services.AddScoped<IAgencyRepository, AgencyRepository>();
             builder.Services.AddScoped<IUserRepository, UserRepository>();
             builder.Services.AddScoped<IPropertyInspectionRequestRepository, PropertyInspectionRequestRepository>();
+            builder.Services.AddScoped<ITenancyAgreementRepository, TenancyAgreementRepository>();
             builder.Services.AddScoped<IPropertyRepository, PropertyRepository>();
             builder.Services.AddTransient<IAuthenticationService, AuthenticationService>();
             builder.Services.AddScoped<ILoggedInUserService, LoggedInUserService>();
